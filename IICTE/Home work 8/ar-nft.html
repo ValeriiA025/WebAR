@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script src="../../js/aframe/aframe.min.js"></script>
+		<script src="../../js/arjs/aframe-ar-nft.js"></script>
+		<link rel="stylesheet" href="ar-nft.css">
+		<script src="registerevnts.js"></script>
+	</head>
+	<body>
+		<div class="arjs-loader">
+			<div>Йде завантаження, зачекайте...</div>
+		</div>
+		<a-scene
+		    vr-mode-ui="enabled: false;"
+		    renderer="logarithmicDepthBuffer: true;"
+		    embedded
+		    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+
+
+			<a-nft type="nft" url="/../assets/tropics_2" emitevents registerevents>
+				<a-entity rotation="90 0 0">
+					<a-sphere radius="100" src="disturb.jpg" segments-height="64"></a-sphere> 
+					
+					<a-entity rotation="0 0 0" animation="property: rotation; form: 0 15 0; to: 0 15 360; loop: true; easing: linear; dur: 3000">
+						<a-sphere radius="1" position="0 170 0" color="blue"></a-sphere>
+					</a-entity>
+					<a-entity rotation="0 45 0" animation="property: rotation; form: 0 45 0; to: 0 45 360; loop: true; easing: linear; dur: 4000">
+						<a-sphere radius="1" position="0 170 0" color="blue"></a-sphere>
+					</a-entity>
+					<a-entity rotation="0 -45 0" animation="property: rotation; form: 0 -45 0; to: 0 -45 360; loop: true; easing: linear; dur: 5000">
+						<a-sphere radius="1" position="0 180 0" color="blue"></a-sphere>
+					</a-entity>
+				</a-entity>
+			</a-nft>
+		<a-entity camera position="0 0 700"></a-entity>
+		</a-scene>
+	</body>
+<html>
